@@ -19,17 +19,18 @@ async function createWindow() {
       // Required for Spectron testing
       enableRemoteModule: true,
 
-      // Use pluginOptions.nodeIntegration, leave this alone
-      // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
-      nodeIntegration: (process.env
-        .ELECTRON_NODE_INTEGRATION as unknown) as boolean,
+      // ブラウザがNode.jsの機能を使用できる
+      // ここを`true`にする場合、インターネット上のサイトを使用しない様にすること
+      nodeIntegration: true,
     },
+    frame: false, // フレームを非表示にする
+    transparent: true, // 背景の透明化
+    hasShadow: false, // デスクトップアプリの影をなくす
   });
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string);
-    if (!process.env.IS_TEST) win.webContents.openDevTools();
   } else {
     createProtocol("app");
     // Load the index.html when not in development
