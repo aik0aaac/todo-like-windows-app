@@ -28,7 +28,7 @@ export interface ITodo {
 /**
  * TODOアイテム(追加用)。
  */
-export interface ITodoCreate {
+export interface ICreateTodo {
   /**
    * 名称。
    */

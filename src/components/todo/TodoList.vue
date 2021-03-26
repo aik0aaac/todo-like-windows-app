@@ -1,6 +1,6 @@
 <template>
   <!-- TODO作成フォーム -->
-  <create-form @add-todo="addTodoAction" />
+  <create-form @add-todo="addTodoAction" class="create-form" />
 
   <!-- TODO一覧 -->
   <ul class="todo-list">
@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import { ITodoCreate, ITodo } from "@/@types/todo";
+import { ICreateTodo, ITodo } from "@/@types/todo";
 import { defineComponent, reactive } from "vue";
 import { VueDraggableNext } from "vue-draggable-next";
 
@@ -80,7 +80,7 @@ export default defineComponent({
   },
 
   setup() {
-    const state = reactive<{ todoList: Array<ITodo> }>({
+    const state = reactive<{ todoList: ITodo[] }>({
       todoList: [
         {
           id: ManagementIdUtil.generateId(),
@@ -98,7 +98,7 @@ export default defineComponent({
       ],
     });
 
-    const addTodoAction = (data: ITodoCreate) => {
+    const addTodoAction = (data: ICreateTodo) => {
       state.todoList.push({
         id: ManagementIdUtil.generateId(),
         name: data.name,
@@ -149,6 +149,10 @@ export default defineComponent({
 </script>
 
 <style lang="sass" scoped>
+// 作成フォーム
+.create-form
+  margin-bottom: 8px
+
 // TODO一覧
 .todo-list
   padding: 0
