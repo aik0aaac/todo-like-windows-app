@@ -3,13 +3,17 @@
  */
 export interface ITodo {
   /**
+   * ID。
+   */
+  id: number;
+  /**
    * 名称。
    */
   name: string;
   /**
-   * 進行状態。
+   * 完了したかどうか。
    */
-  state: string;
+  isDone: boolean;
 
   /**
    * 子アイテム。
@@ -40,13 +44,17 @@ export interface ITodoCreate {
  */
 export interface ITodoChildren {
   /**
+   * ID。
+   */
+  id: number;
+  /**
    * 名称。
    */
   name: string;
   /**
-   * 進行状態。
+   * 完了したかどうか。
    */
-  state: string;
+  isDone: boolean;
 }
 
 /**

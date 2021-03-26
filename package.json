@@ -15,11 +15,11 @@
   "main": "background.js",
   "dependencies": {
     "7.css": "^0.3.0",
-    "98.css": "^0.1.16",
     "autoprefixer": "9",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
+    "vue-draggable-next": "^2.0.1",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0",
     "xp.css": "^0.2.4"

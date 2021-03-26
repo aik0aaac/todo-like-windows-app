@@ -1,4 +1,7 @@
 <template>
+  <!-- カテゴリ一覧 -->
+
+  <!-- タスク一覧 -->
   <todo-list />
 </template>
 

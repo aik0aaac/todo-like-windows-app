@@ -1,24 +1,24 @@
 <template>
-  <button @click="completed">Done</button>
+  <button @click="removeTask" class="remove-button">Remove</button>
 </template>
 
 <script lang="ts">
 import { defineComponent, SetupContext } from "vue";
 
 export default defineComponent({
-  name: "CompleteButton",
+  name: "RemoveTaskButton",
   props: {
-    index: {
+    id: {
       type: Number,
     },
   },
 
   setup(props, context: SetupContext) {
-    const completed = () => {
-      context.emit("complete-todo", props.index);
+    const removeTask = () => {
+      context.emit("remove-task", props.id);
     };
 
-    return { completed, props };
+    return { removeTask, props };
   },
 });
 </script>

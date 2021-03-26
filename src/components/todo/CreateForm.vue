@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <div class="field-row">
-      <button @click="add">Add TODO</button>
-      <input v-model="todoRef.name" type="text" />
-    </div>
+  <div class="field-row">
+    <button @click="add">Add TODO</button>
+    <input v-model="todoRef.name" type="text" />
   </div>
 </template>
 

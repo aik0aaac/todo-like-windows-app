@@ -14,6 +14,14 @@
     <div class="window-body">
       <slot name="body"></slot>
     </div>
+
+    <!-- ステータスバー -->
+    <div class="status-bar">
+      <p class="status-bar-field">Created by @aik0aaac</p>
+      <p class="status-bar-field">
+        Github: https://github.com/aik0aaac/todo-like-windows-app
+      </p>
+    </div>
   </div>
 </template>
 
@@ -22,6 +30,7 @@ import { defineComponent } from "vue";
 
 declare global {
   interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     require: any;
   }
 }
@@ -59,5 +68,5 @@ export default defineComponent({
     -webkit-app-region: drag
   // Windows枠内
   .window-body
-    height: 90vh
+    height: 88vh
 </style>
